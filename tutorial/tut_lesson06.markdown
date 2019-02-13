@@ -156,4 +156,4 @@ With the basics of collision in place, it's time to lay the foundation for our c
 
 [On to Lesson 7][next]
 
-[next]: tut_lesson7.html
+[next]: tut_lesson07.html

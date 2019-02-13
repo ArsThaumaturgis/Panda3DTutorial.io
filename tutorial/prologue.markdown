@@ -58,4 +58,4 @@ And now, let us begin...
 
 [On to lesson 1][lesson1]
 
-[lesson1]: tut_lesson1.html
+[lesson1]: tut_lesson01.html

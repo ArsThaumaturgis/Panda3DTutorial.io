@@ -57,4 +57,4 @@ Next, let's consider adding some models to the scene...
 
 [On to Lesson 2][next]
 
-[next]: tut_lesson2.html
+[next]: tut_lesson02.html

@@ -128,4 +128,4 @@ But it still all looks so flat. Let's fix that...
 
 [On to Lesson 3][next]
 
-[next]: tut_lesson3.html
+[next]: tut_lesson03.html

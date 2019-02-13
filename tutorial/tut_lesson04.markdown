@@ -73,4 +73,4 @@ This still doesn't do much, of course. So, let's tie those controls to a more in
 
 [On to Lesson 5][next]
 
-[next]: tut_lesson5.html
+[next]: tut_lesson05.html

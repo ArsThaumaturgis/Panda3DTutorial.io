@@ -342,4 +342,4 @@ Next, let's see how we handle collision events, via our trap enemy...
 
 [On to Lesson 8][next]
 
-[next]: tut_lesson8.html
+[next]: tut_lesson08.html

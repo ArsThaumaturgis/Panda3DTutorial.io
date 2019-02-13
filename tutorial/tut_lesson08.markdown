@@ -157,4 +157,4 @@ We'll get to reactions to damage soon enough, but first, let's provide our playe
 
 [On to Lesson 9][next]
 
-[next]: tut_lesson9.html
+[next]: tut_lesson09.html
