@@ -40,18 +40,38 @@ Reference code:
 
 Each lesson provides example code--but these are often fragments (for brevity's sake). If you want to see the code in context, compare it with your own, you can find the full code as of the end of each lesson in the "ReferenceCode" directory. In there you should find one directory for each lesson, containing the full code 
 
-The assets included, and what you're allowed to do with them
+The assets for the tutorial
 -
 
-This tutorial includes various assets used in the game that it builds up; they should all be found in the "Assets" folder. These come from a variety of sources, and fall under a variety of licenses.
+This tutorial makes use of a variety of assets, from a variety of sources. So that you can build the tutorial game yourself, let me link to them here.
 
-If you're just using this tutorial to learn how to use Panda3D, with no intention of distributing any of it, then I doubt that you have to worry about this.
+Note that each set of assets has its own license, so if you intend to use any of the following in your own works, and especially if you plan on distributing them in any way, I recommend that you check those licenses! (But I am not a lawyer, and this is not legal advice.)
 
-If you intend to use any of the included assets in a manner that involves distributing them--even for free--then you may want to check the license file to see what requirements or restrictions may apply. For example, some assets may be used commercially, while others may not--and almost all require some form of attribution or linking.
+The models and textures:
+* Environment, simple enemy, laser, and hit-flashes:
 
-The license file is named "license.txt", and should contain fuller information, and links where appropriate.
+    [https://github.com/ArsThaumaturgis/PandaSampleModels][samplemodels]
 
-However, note that I am not a lawyer, and that none of this is legal advice.
+* Panda-chan, by wezu:
+
+     [https://github.com/wezu/p3d_samples/tree/master/models][pandaChan]
+
+UI elements:
+* [https://github.com/ArsThaumaturgis/PandaSampleModels][samplemodels]
+     * (The same as the first model-repository above; they're in the "UI" directory)
+
+Sound effects:
+* [https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/Sounds][soundEffects]
+
+Music:
+* [https://soundimage.org/epic-battle/][music]
+    * I'm using "Defending the Princess Haunted".
+    * The music offered there is in MP3 format, but can be converted to OGG format via free tools. I used Sound Converter: http://soundconverter.org/
+
+Font:
+* [https://www.dafont.com/wbx-komik.font][font]
+
+When these assets are loaded in the tutorial, take note of the directories that I reference. You may want to either adopt the same folder-structure, or adapt the folder-references in the code to whatever structure you use!
 
 And now, let us begin...
 -
@@ -59,3 +79,8 @@ And now, let us begin...
 [On to lesson 1][lesson1]
 
 [lesson1]: tut_lesson01.html
+[samplemodels]: https://github.com/ArsThaumaturgis/PandaSampleModels
+[pandaChan]: https://github.com/wezu/p3d_samples/tree/master/models
+[soundEffects]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/Sounds
+[music]: https://soundimage.org/epic-battle/
+[font]: https://www.dafont.com/wbx-komik.font
