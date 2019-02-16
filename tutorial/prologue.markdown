@@ -38,7 +38,9 @@ What's covered:
 Reference code:
 -
 
-Each lesson provides example code--but these are often fragments (for brevity's sake). If you want to see the code in context, compare it with your own, you can find the full code as of the end of each lesson in the "ReferenceCode" directory. In there you should find one directory for each lesson, containing the full code 
+Each lesson provides example code--but these are often fragments (for brevity's sake). If you want to see the code in context, compare it with your own, you can find the full code as of the end of each lesson in the "ReferenceCode" directory. In there you should find one directory for each lesson, containing the full code.
+
+The reference code directory should be available here: [https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode][refCode]
 
 The assets for the tutorial
 -
@@ -84,3 +86,4 @@ And now, let us begin...
 [soundEffects]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/Sounds
 [music]: https://soundimage.org/epic-battle/
 [font]: https://www.dafont.com/wbx-komik.font
+[refCode]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode
