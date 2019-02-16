@@ -45,7 +45,7 @@ The assets for the tutorial
 
 This tutorial makes use of a variety of assets, from a variety of sources. So that you can build the tutorial game yourself, let me link to them here.
 
-Note that each set of assets has its own license, so if you intend to use any of the following in your own works, and especially if you plan on distributing them in any way, I recommend that you check those licenses! (But I am not a lawyer, and this is not legal advice.)
+Note that each set of assets has its own license. If you intend to use any of the following in your own works, and especially if you plan on distributing them in any way, I recommend that you check those licenses! (But I am not a lawyer, and this is not legal advice.)
 
 The models and textures:
 * Environment, simple enemy, laser, and hit-flashes:
@@ -71,7 +71,7 @@ Music:
 Font:
 * [https://www.dafont.com/wbx-komik.font][font]
 
-When these assets are loaded in the tutorial, take note of the directories that I reference. You may want to either adopt the same folder-structure, or adapt the folder-references in the code to whatever structure you use!
+When these assets are mentioned in the tutorial, take note of the directories that I reference. You may want to either adopt the same folder-structure, or adapt the folder-references in the code to whatever structure you use!
 
 And now, let us begin...
 -
