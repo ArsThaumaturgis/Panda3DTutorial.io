@@ -17,11 +17,11 @@ We could perhaps use collision-events for this, but an easier way is have our ra
 For the moment, since we don't have a visual representation of the laser, we'll just print out what it hits.
 
 In "GameObject.py":
-{% highlight python %}
+```python
 # In your "import" statements:
 from panda3d.core import CollisionRay, CollisionHandlerQueue
-{% endhighlight %}
-{% highlight python %}
+```
+```python
 # In the "__init__" method of the "Player" class:
 self.ray = CollisionRay(0, 0, 0, 0, 1, 0)
 
@@ -38,8 +38,8 @@ self.rayQueue = CollisionHandlerQueue()
 base.cTrav.addCollider(self.rayNodePath, self.rayQueue)
 
 self.damagePerSecond = -5.0
-{% endhighlight %}
-{% highlight python %}
+```
+```python
 # In the "update" method of the "Player" class:
 
 # If we're pressing the "shoot" button, check
@@ -61,8 +61,8 @@ if keys["shoot"]:
             hitObject = hitNodePath.getPythonTag("owner")
             if not isinstance(hitObject, TrapEnemy):
                 hitObject.alterHealth(self.damagePerSecond*dt)
-{% endhighlight %}
-{% highlight python %}
+```
+```python
 # And finally, a bit of extra cleaning up.
 # In the Player class, we override
 # GameObject's "cleanup" method:
@@ -70,7 +70,7 @@ def cleanup(self):
     base.cTrav.removeCollider(self.rayNodePath)
 
     GameObject.cleanup(self)
-{% endhighlight %}
+```
 
 Okay, that's great--but there's a problem: Right now, our laser can hit anything. Including the player-character, on occasion. (It's also not pointing in the correct direction--but we'll get to that presently.)
 
@@ -90,11 +90,11 @@ By default, a newly-created BitMask object has all its bits set to "off".
 
 In our case, we want to make sure that the player has a mask, and that the player's ray has different mask, so that they don't collide. Conversely, we want our enemy to have a mask that matches the ray's, so that they _do_ collide:
 
-{% highlight python %}
+```python
 # In your "import" statements:
 from panda3d.core import BitMask32
-{% endhighlight %}
-{% highlight python %}
+```
+```python
 # In the "__init__" method of the "Player" class:
 mask = BitMask32()
 mask.setBit(1)
@@ -121,8 +121,8 @@ rayNode.setFromCollideMask(mask)
 
 mask = BitMask32()
 rayNode.setIntoCollideMask(mask)
-{% endhighlight %}
-{% highlight python %}
+```
+```python
 # Then, in the "__init__" method of the "WalkingEnemy" class:
 
 # Note that this is the same bit as we used for the ray!
@@ -130,8 +130,8 @@ mask = BitMask32()
 mask.setBit(2)
 
 self.collider.node().setIntoCollideMask(mask)
-{% endhighlight %}
-{% highlight python %}
+```
+```python
 # And in the "__init__" method of the "TrapEnemy" class:
 
 # Trap-enemies should hit both the player and "walking" enemies,
@@ -147,13 +147,13 @@ mask.setBit(2)
 mask.setBit(1)
 
 self.collider.node().setFromCollideMask(mask)
-{% endhighlight %}
+```
 
 Now our laser should skip the player, but hit both traps and walking-enemies!
 
 We'll also want some means of representing our laser, and of showing that it has hit something. For that, we'll use a new model, from the file named "bambooLaser". It's a simple quad, narrow, and one unit in length. This we'll attach to our actor, and just scale it to match the laser's length.
 
-{% highlight python %}
+```python
 # In the "__init__" method of the "Player" class:
 
 # A nice laser-beam model to show our laser
@@ -165,8 +165,8 @@ self.beamModel.setLightOff()
 # We don't start out firing the laser, so 
 # we have it initially hidden.
 self.beamModel.hide()
-{% endhighlight %}
-{% highlight python %}
+```
+```python
 # In the "update" method of the "Player" class:
 
 # We've seen this bit before--the new stuff is inside
@@ -193,7 +193,7 @@ if keys["shoot"]:
 else:
     # If we're not shooting, don't show the beam-model.
     self.beamModel.hide()
-{% endhighlight %}
+```
 
 ![Panda-chan firing a laser](images/laserUp.png "ZAP!")
 

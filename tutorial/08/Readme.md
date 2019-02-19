@@ -17,12 +17,12 @@ Since this enemy is intended to collide into other things, we add its collider t
 In terms of logic, the trap simply compares its position to the player's, and if the player comes within range of its line of movement, it starts moving. This is controlled by the "moveDirection" variable: when it's zero, the trap isn't moving; when it's one or minus one, it moves in one or the other direction.
 
 In "GameObject.py":
-{% highlight python %}
+```python
 # In your "import" statements:
 import math
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # Elsewhere:
 class TrapEnemy(Enemy):
     def __init__(self, pos):
@@ -69,18 +69,18 @@ class TrapEnemy(Enemy):
 
     def alterHealth(self, dHealth):
         pass
-{% endhighlight %}
+```
 
 Next, let's add a temporary testing-trap to the level, in our "Game.py" file:
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 self.tempTrap = TrapEnemy(Vec3(-2, 7, 0))
-{% endhighlight %}
-{% highlight python %}
+```
+```python
 # In the "update" method:
 self.tempTrap.update(self.player, dt)
-{% endhighlight %}
+```
 
 For now, the trap will move, but never stop attempting to move. Similarly, while it will collide with other objects, it won't do any harm.
 
@@ -95,20 +95,20 @@ In short, we're going to tell the "pusher" that we want "in" events--that is, th
 Thus, we ask the "pusher" to add an "in"-pattern, of the form "%fn-into-%in". "%fn" will be replaced with the name of the "from" collision-object (the object that is "doing" the colliding), while "%in" will be replaced with the name of the "into" collision-object (the object that is "being collide with"). The "-into-" between "%fn" and "%in" doesn't have any effect, save to make the events clearer to us, I believe.
 
 In "Game.py":
-{% highlight python %}
+```python
 # In the "__init__" method:
 self.pusher.add_in_pattern("%fn-into-%in")
-{% endhighlight %}
+```
 
 Next, we want to actually receive those events. This works just like key-events, except that instead of the name of a key, we use the pattern that we specified above, but with collider-names. If you're not sure of where those names come from, check the names given to the collision-nodes in the previous lesson!
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 self.accept("trapEnemy-into-wall", self.stopTrap)
 self.accept("trapEnemy-into-trapEnemy", self.stopTrap)
 self.accept("trapEnemy-into-player", self.trapHitsSomething)
 self.accept("trapEnemy-into-walkingEnemy", self.trapHitsSomething)
-{% endhighlight %}
+```
 
 When those events occur, Panda will call the methods named "stopTrap" and "trapHitsSomething", as appropriate. Of course, we don't yet have those, so let's make them. (If we don't, our game will likely crash.)
 
@@ -120,7 +120,7 @@ The "trapHitsSomething" method will be called when the trap hits the player or a
 
 Note the use of our Python-tags to access the GameObjects associated with the colliders.
 
-{% highlight python %}
+```python
     def stopTrap(self, entry):
         collider = entry.getFromNodePath()
         if collider.hasPythonTag("owner"):
@@ -147,7 +147,7 @@ Note the use of our Python-tags to access the GameObjects associated with the co
                         trap.ignorePlayer = True
                 else:
                     obj.alterHealth(-10)
-{% endhighlight %}
+```
 
 Our player and enemy don't really react to taking damage just yet--but at least we can see the trap going back and forth now.
 

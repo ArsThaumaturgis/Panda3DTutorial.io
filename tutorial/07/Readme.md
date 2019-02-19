@@ -29,7 +29,7 @@ In short, the "GameObject" class will have two sub-classes: "Player" and "Enemy"
 
 The shells of our new classes look like this:
 
-{% highlight python %}
+```python
 class GameObject():
     pass
 
@@ -41,13 +41,13 @@ class Enemy(GameObject):
 
 class WalkingEnemy(Enemy):
     pass
-{% endhighlight %}
+```
 
 In a number of places below, we'll want to access "cTrav" and our "pusher" handler. This is done via a Panda-provided globally-accessible variable called "base", which provides a reference to the game's "ShowBase" object--and since that's our "Game" object, that reference is also a reference to our game.
 
 "GameObject" will store a given character's actor and collider, as well as handling its velocity and movement, and the basics of its health. It will also provide a "cleanup" method, for when we want to remove a character.
 
-{% highlight python %}
+```python
 from panda3d.core import Vec3, Vec2
 from direct.actor.Actor import Actor
 from panda3d.core import CollisionSphere, CollisionNode
@@ -124,15 +124,15 @@ class GameObject():
             self.actor = None
 
         self.collider = None
-{% endhighlight %}
+```
 
 Something that is worth noting above is the pair of "Python-tag"-related methods--these two:
-{% highlight python %}
+```python
 self.collider.setPythonTag("owner", self)
-{% endhighlight %}
-{% highlight python %}
+```
+```python
 self.collider.clearPythonTag("owner")
-{% endhighlight %}
+```
 
 What I'm doing here is storing a reference to the GameObject in the collider. When a collision happens, we have access to the colliders involved--but we likely want access to the related GameObject, too. This provides that access.
 
@@ -142,7 +142,7 @@ Thus, when we clean up the GameObject, we clear the Python-tag, and so break the
 
 The "Player" class holds pretty much the same player-logic as we've thus far had in our "Game" class, save that the movement-controls now alter its velocity, rather than just moving it:
 
-{% highlight python %}
+```python
 class Player(GameObject):
     def __init__(self):
         GameObject.__init__(self,
@@ -203,7 +203,7 @@ class Player(GameObject):
             if not standControl.isPlaying():
                 self.actor.stop("walk")
                 self.actor.loop("stand")
-{% endhighlight %}
+```
 
 Regarding that animation code, the basic idea is that if a character is "walking", then it should loop its "walk" animation, if it wasn't already. If it's not walking, then, as long as it's not playing another animation, it should loop its "stand" animation, if it wasn't already.
 
@@ -213,7 +213,7 @@ You may also notice further animation code, to similar effect, in the "Enemy" cl
 
 The "Enemy" class provides a stub "runLogic" method, which is intended to be overridden by its sub-classes, and calls this method in its "update" method. It also provides a "score" value, for when it's killed:
 
-{% highlight python %}
+```python
 class Enemy(GameObject):
     def __init__(self, pos, modelName, modelAnims, maxHealth, maxSpeed, colliderName):
         GameObject.__init__(self, pos, modelName, modelAnims, maxHealth, maxSpeed, colliderName)
@@ -250,11 +250,11 @@ class Enemy(GameObject):
 
     def runLogic(self, player, dt):
         pass
-{% endhighlight %}
+```
 
 And finally, the "WalkingEnemy" class overrides the "runLogic" method of the "Enemy" class, providing code that has it walk towards the player until it reaches an "attack distance". It also turns to face the player, using the vector between their positions, and the "signedAngleDeg" (i.e. "get the signed angle, in degrees") method provided by Panda's vector-classes.
 
-{% highlight python %}
+```python
 class WalkingEnemy(Enemy):
     def __init__(self, pos):
         Enemy.__init__(self, pos,
@@ -307,7 +307,7 @@ class WalkingEnemy(Enemy):
             self.velocity.set(0, 0, 0)
 
         self.actor.setH(heading)
-{% endhighlight %}
+```
 
 With all that done, we want to use these classes in our game.
 
@@ -317,22 +317,22 @@ Then we import our "GameObject" module, and--for now--create a temporary instanc
 
 So, in "Game.py":
 
-{% highlight python %}
+```python
 # In your import statements:
 from GameObject import *
-{% endhighlight %}
-{% highlight python %}
+```
+```python
 # In the "__init__" method:
 self.player = Player()
 
 self.tempEnemy = WalkingEnemy(Vec3(5, 0, 0))
-{% endhighlight %}
-{% highlight python %}
+```
+```python
 # In the "update" method:
 self.player.update(self.keyMap, dt)
 
 self.tempEnemy.update(self.player, dt)
-{% endhighlight %}
+```
 
 If you run the game now, you should be able to move the player, much as before--but you'll also be chased around (harmlessly--for now) by an enemy!
 

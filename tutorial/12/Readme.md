@@ -18,14 +18,14 @@ The player's health will be displayed as a row of "heart"-icons, using a similar
 
 In "GameObject.py":
 
-{% highlight python %}
+```python
 # In your "import" statements:
 from direct.gui.OnscreenText import OnscreenText
 from direct.gui.OnscreenImage import OnscreenImage
 from panda3d.core import TextNode
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "__init__" method of "Player":
 self.score = 0
 
@@ -43,9 +43,9 @@ for i in range(self.maxHealth):
     # we'll activate transparency.
     icon.setTransparency(True)
     self.healthIcons.append(icon)
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "Player" class:
 def updateScore(self):
     self.scoreUI.setText(str(self.score))
@@ -61,19 +61,19 @@ def updateHealthUI(self):
             icon.show()
         else:
             icon.hide()
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # And finally, in the "cleanup" method of "Player":
 self.scoreUI.removeNode()
 
 for icon in self.healthIcons:
     icon.removeNode()
-{% endhighlight %}
+```
 
 As for the Walking Enemy's health, we'll simply shade its model to black as it becomes more damaged. This is achieved by applying a colour-scale to its Actor--that is, a colour by which the model's colours will be multiplied.
 
-{% highlight python %}
+```python
 # In the "WalkingEnemy" class:
 def alterHealth(self, dHealth):
     Enemy.alterHealth(self, dHealth)
@@ -85,7 +85,7 @@ def updateHealthVisual(self):
         perc = 0
     # The parameters here are red, green, blue, and alpha
     self.actor.setColorScale(perc, perc, perc, 1)
-{% endhighlight %}
+```
 
 Now we can see the effect of damage done, on both our player-character and the enemy!
 
@@ -95,14 +95,14 @@ Next, let's attend to our laser. It's not all that satisfying to hit enemies wit
 
 So, we're going to add two effects that will show up when we hit a Walking Enemy (but not a Trap Enemy, as they're invulnerable): First, a sort of hit-flash will appear, pulsing and randomly changing its orientation to give the impression of coruscating rays of light. And second, we're going to add a point-light, to give it a bit more glow.
 
-{% highlight python %}
+```python
 # In your "import" statements:
 from panda3d.core import Vec4
 
 from panda3d.core import PointLight
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "__init__" method of Player:
 self.beamHitModel = loader.loadModel("Models/Misc/bambooLaserHit")
 self.beamHitModel.reparentTo(render)
@@ -126,9 +126,9 @@ self.beamHitLightNodePath = render.attachNewNode(self.beamHitLight)
 # Note that we haven't yet applied the light to
 # a NodePath, and so it won't yet illuminate
 # anything.
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "update" method of Player:
 
 # In short, run a timer, and use the timer in a sine-function
@@ -140,11 +140,11 @@ if self.beamHitTimer <= 0:
     self.beamHitTimer = self.beamHitPulseRate
     self.beamHitModel.setH(random.uniform(0.0, 360.0))
 self.beamHitModel.setScale(math.sin(self.beamHitTimer*3.142/self.beamHitPulseRate)*0.4 + 0.9)
-{% endhighlight %}
+```
 
 We'll be adding lines within the 'if keys["shoot"]' code-section that we already have in Player's "update" method. So, instead of just showing the new lines, I'm going to show the full section of code and mark the new lines with "# NEW!!!":
 
-{% highlight python %}
+```python
 # In the "update" method of Player:
 
 if keys["shoot"]:
@@ -201,24 +201,24 @@ else:
 
     # NEW!!!
     self.beamHitModel.hide()
-{% endhighlight %}
+```
 
 And finally, some more cleaning up:
 
-{% highlight python %}
+```python
 # In the "cleanup" method of Player:
 self.beamHitModel.removeNode()
 
 render.clearLight(self.beamHitLightNodePath)
 self.beamHitLightNodePath.removeNode()
-{% endhighlight %}
+```
 
 Before we move on, I want to talk about how we used the point-light above. Specifically, these lines:
 
-{% highlight python %}
+```python
 if render.hasLight(self.beamHitLightNodePath):
     render.clearLight(self.beamHitLightNodePath)
-{% endhighlight %}
+```
 
 NodePaths have two means of preventing a light from affecting them (and their children): "clearLight" and "setLightOff". These seem similar, but aren't. The "clearLight" method removes a light that has been applied to the node via "setLight". The "setLightOff" method places a note of sorts on the node that indicates that the light in question shouldn't affect it--regardless of where the light was applied. This can be useful for specifying that a given node should not be lit, despite "setLight" having been applied to one of its parents, for example.
 
@@ -234,7 +234,7 @@ Functionally, this will be pretty much the same as the hit-flash that we used fo
 
 Furthermore, since our player-character has only five health-points, let's make a hit to the player very obvious, and so make our hit-flash rather large.
 
-{% highlight python %}
+```python
 # In the "__init__" method of Player:
 
 self.damageTakenModel = loader.loadModel("Models/Misc/playerHit")
@@ -245,8 +245,8 @@ self.damageTakenModel.hide()
 
 self.damageTakenModelTimer = 0
 self.damageTakenModelDuration = 0.15
-{% endhighlight %}
-{% highlight python %}
+```
+```python
 # In the "update" method of Player:
 
 if self.damageTakenModelTimer > 0:
@@ -254,15 +254,15 @@ if self.damageTakenModelTimer > 0:
     self.damageTakenModel.setScale(2.0 - self.damageTakenModelTimer/self.damageTakenModelDuration)
     if self.damageTakenModelTimer <= 0:
         self.damageTakenModel.hide()
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "alterHealth" method of Player:
 
 self.damageTakenModel.show()
 self.damageTakenModel.setH(random.uniform(0.0, 360.0))
 self.damageTakenModelTimer = self.damageTakenModelDuration
-{% endhighlight %}
+```
 
 Now hits against the player should hopefully feel a bit more impactful, too!
 

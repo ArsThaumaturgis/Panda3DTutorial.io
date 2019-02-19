@@ -14,19 +14,19 @@ Once again, this is mostly game-logic, which I intend to skim over.
 
 To start with, two minor changes in "GameObject.py". These simply have the Walking Enemy play a "spawn" animation when its constructed, and skip the behaviour in "runLogic" until the "spawn" animation is done:
 
-{% highlight python %}
+```python
 # In the "__init__" method of WalkingEnemy:
 self.actor.play("spawn")
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "runLogic" method of WalkingEnemy:
 
 # At the start of the method:
 spawnControl = self.actor.getAnimControl("spawn")
 if spawnControl is not None and spawnControl.isPlaying():
     return
-{% endhighlight %}
+```
 
 Now, on to "Game.py".
 
@@ -40,12 +40,12 @@ Traps will be placed at the start of the level. They'll similarly use a list of 
 
 We'll also create a new "startGame" method to contain the logic for the spawning of traps, creation of the player, and a few other things. While not terribly useful just yet, it will come in handy once we add the ability to restart the game when the player-character dies.
 
-{% highlight python %}
+```python
 # In your "import" statements:
 import random
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 
 # Start off with no player; the
@@ -88,9 +88,9 @@ self.difficultyTimer = self.difficultyInterval
 
 # Start the game!
 self.startGame()
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # Elsewhere in the Game class:
 
 def startGame(self):
@@ -146,18 +146,18 @@ def startGame(self):
         trap = TrapEnemy(Vec3(-7.0, slot, 0))
         trap.moveInX = True
         self.trapEnemies.append(trap)
-{% endhighlight %}
+```
 
 Next, we'll add a method to clean up a level once we're done with it. 
 
 Furthermore, it might be a good idea to clean up not only when starting a new level, but also when exiting the game. To that end, we'll tell Panda that, when the user indicates that they want to quit, we want to run a custom exit-function. This function will run our new clean-up method, then quit.
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 self.exitFunc = self.cleanup
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # Elsewhere in the Game class:
 def cleanup(self):
     # Call our various cleanup methods,
@@ -186,13 +186,13 @@ def quit(self):
     self.cleanup()
 
     base.userExit()
-{% endhighlight %}
+```
 
 If we run the game now, we'll be able to move around as before, and we'll have traps scattered randomly around the walls. The traps won't, however, move. (Because they're not being updated--yet.)
 
 Next, we'll add a method to spawn an enemy. This is pretty straightforward: pick a spawn-point, create an enemy at that point, and add the new enemy to our list of enemies:
 
-{% highlight python %}
+```python
 def spawnEnemy(self):
     if len(self.enemies) < self.maxEnemies:
         spawnPoint = random.choice(self.spawnPoints)
@@ -200,7 +200,7 @@ def spawnEnemy(self):
         newEnemy = WalkingEnemy(spawnPoint)
 
         self.enemies.append(newEnemy)
-{% endhighlight %}
+```
 
 And finally, we'll implement the logic to make it all do something. In short, the logic looks something like this:
 * If the player isn't "None", and has health, run this logic.
@@ -218,7 +218,7 @@ And finally, we'll implement the logic to make it all do something. In short, th
 
 In code form:
 
-{% highlight python %}
+```python
 # In the "update" method:
 
 # If the player is dead, or we're not
@@ -278,7 +278,7 @@ if self.player is not None:
                 self.maxEnemies += 1
             if self.spawnInterval > self.minimumSpawnInterval:
                 self.spawnInterval -= 0.1
-{% endhighlight %}
+```
 
 And now we have something like a real game! Enemies spawn and attack us! Traps destroy player-character and enemy alike! We can even gain points for each enemy defeated! And when at last we fall to the endless horde, play stops!
 

@@ -18,16 +18,16 @@ Almost all of the following code will be done in "Game.py".
 
 To start with, let's import the various DirectGUI elements, ready to use:
 
-{% highlight python %}
+```python
 # In your "import" statements:
 from direct.gui.DirectGui import *
-{% endhighlight %}
+```
 
 That done, let's build our "game-over" menu.
 
 This will be "dialogue box", a special sort of GUI-object that can obscure things behind it, and prevent mouse-clicks or keyboard-input from getting through.
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 
 # Make a "DirectDialog" object
@@ -50,11 +50,11 @@ self.gameOverScreen = DirectDialog(frameSize = (-0.7, 0.7, -0.7, 0.7),
 # up until the player loses, so we'll
 # hide it at first.
 self.gameOverScreen.hide()
-{% endhighlight %}
+```
 
 To this we'll add a heading that reads "game-over", a label that gives the final score for the run, and buttons that allow the player to restart or quit:
 
-{% highlight python %}
+```python
 # Create a "label"--a GUI item that shows
 # text, an image, or both:
 #
@@ -96,19 +96,19 @@ btn = DirectButton(text = "Quit",
                    pos = (0.3, 0, -0.2),
                    parent = self.gameOverScreen,
                    scale = 0.07)
-{% endhighlight %}
+```
 
 With the basics of the game-over screen done, let's implement the logic to show it when the player loses, and hide it when they start (or more to the point, restart) the game:
 
-{% highlight python %}
+```python
 # In the "startGame" method:
 
 # If we happen to be restarting the
 # game, hide the game-over screen!
 self.gameOverScreen.hide()
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "update" method:
 
 # After the "if self.player.health > 0:" section,
@@ -128,7 +128,7 @@ else:
         self.gameOverScreen.show()
         self.finalScoreLabel["text"] = "Final score: " + str(self.player.score)
         self.finalScoreLabel.setText()
-{% endhighlight %}
+```
 
 With all of that done, the game-over screen should now be functional! Try running the game and letting the player-character be killed. You should now see the game-over screen pop up, and have the option to either restart or quit.
 
@@ -140,14 +140,14 @@ First, we'll replace the default font.
 
 There are a few ways to handle fonts in Panda3D, but one simple way is to just load it via the "loader" object, as with models and sounds:
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 self.font = loader.loadFont("Fonts/Wbxkomik.ttf")
-{% endhighlight %}
+```
 
 We can then use it when constructing our various DirectGUI elements, by including it as an appropriate keyword:
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 
 # For DirectLabels and DirectButtons,
@@ -180,20 +180,20 @@ btn = DirectButton(text = "Quit",
                    parent = self.gameOverScreen,
                    scale = 0.07,
                    text_font = self.font)
-{% endhighlight %}
+```
 
 That's better, but the backdrops of our GUI-items are still a flat grey.
 
 To start with, the game-over screen itself. In this case, we'll simply apply a texture to its geometry, via the "frameTexture" keyword:
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 
 self.gameOverScreen = DirectDialog(frameSize = (-0.7, 0.7, -0.7, 0.7),
                                    fadeScreen = 0.4,
                                    relief = DGG.FLAT,
                                    frameTexture = "UI/stoneFrame.png")
-{% endhighlight %}
+```
 
 Next, we'll do something similar with our DirectButtons.
 
@@ -215,7 +215,7 @@ And while we're at it, we'll give our buttons a nice sound-effect to be played w
 
 Thus we have the following:
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 
 # A set of images, one for each button-state,
@@ -254,11 +254,11 @@ btn = DirectButton(text = "Quit",
                    relief = DGG.FLAT,
                    text_pos = (0, -0.2))
 btn.setTransparency(True)
-{% endhighlight %}
+```
 
 One more thing: if we try our game now, we'll see all of our image-backdrops--but the labels will still be surrounded by their standard grey backdrops! To remove these, we'll simply set their "relief" keyword-parameters to "None", resulting in the following code:
 
-{% highlight python %}
+```python
 label = DirectLabel(text = "Game Over!",
                     parent = self.gameOverScreen,
                     scale = 0.1,
@@ -272,7 +272,7 @@ self.finalScoreLabel = DirectLabel(text = "",
                                    pos = (0, 0, 0),
                                    text_font = self.font,
                                    relief = None)
-{% endhighlight %}
+```
 
 Thus the final result looks like this:
 
@@ -301,7 +301,7 @@ So, if we make a GUI object that's parented to "render2d", and that runs from -1
 
 And since our backdrop is nothing but flat blackness, stretching won't be an issue.
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 
 # Make a black backdrop that covers the whole window
@@ -362,7 +362,7 @@ btn = DirectButton(text = "Quit",
                    relief = DGG.FLAT,
                    text_pos = (0, -0.2))
 btn.setTransparency(True)
-{% endhighlight %}
+```
 
 ![Our main menu.](images/mainMenu.png "First impressions")
 
@@ -372,16 +372,16 @@ However, since we now have a "start game" button to call the "startGame" method,
 
 Conversely, when we do start the game, we don't want the title menu (or its backdrop) to remain on-screen, covering the game itself. So, we'll hide it, as we did with the game-over screen:
 
-{% highlight python %}
+```python
 # In the "startGame" method:
 
 self.titleMenu.hide()
 self.titleMenuBackdrop.hide()
-{% endhighlight %}
+```
 
 And finally, one more bit of polish: our score-text still uses the default font. So, in "GameObject.py", we'll add the "font" keyword to the constructor for our "scoreUI" object:
 
-{% highlight python %}
+```python
 # In the "__init__" method of Player:
 
 self.scoreUI = OnscreenText(text = "0",
@@ -394,7 +394,7 @@ self.scoreUI = OnscreenText(text = "0",
 # DirectLabel (and various other
 # DirectGUI objects) use "text_font", while
 # OnscreenText uses "font".
-{% endhighlight %}
+```
 
 And there we have it! A full, working, playable game, complete with menus!
 

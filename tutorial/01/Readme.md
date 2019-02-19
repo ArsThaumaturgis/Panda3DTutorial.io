@@ -10,7 +10,7 @@ At it's most basic, running a Panda3D program is quite simple: create a "ShowBas
 
 Specifically, it can be convenient to make our main "game-class" a sub-class of ShowBase: this unifies our game-class with the ShowBase that we'll run, and even gives us a globally-accessible variable, named "base", that points to our game.
 
-{% highlight python %}
+```python
 from direct.showbase.ShowBase import ShowBase
 
 class Game(ShowBase):
@@ -19,7 +19,7 @@ class Game(ShowBase):
 
 game = Game()
 game.run()
-{% endhighlight %}
+```
 
 If you run the code above, a window should open titled "Panda", and showing an empty grey view:
 
@@ -31,7 +31,7 @@ There are a few ways of doing this, but one simple method is to "request window 
 
 I've chosen a window-size of 1000x750; modify this to suit your screen and preference.
 
-{% highlight python %}
+```python
 from direct.showbase.ShowBase import ShowBase
 from panda3d.core import WindowProperties
 
@@ -45,13 +45,13 @@ class Game(ShowBase):
 
 game = Game()
 game.run()
-{% endhighlight %}
+```
 
 Panda3D by default uses a particular mouse-based camera-control. We probably don't want to use that, so we disable that control, allowing us to (later) control the camera ourselves:
 
-{% highlight python %}
+```python
 self.disableMouse()
-{% endhighlight %}
+```
 
 Next, let's consider adding some models to the scene...
 

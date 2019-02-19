@@ -16,7 +16,7 @@ To start with, let's load and play some music. In a bigger project we might have
 
 In "Game.py":
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 music = loader.loadMusic("Music/Defending-the-Princess-Haunted.ogg")
 music.setLoop(True)
@@ -25,7 +25,7 @@ music.setLoop(True)
 # Adjust to your settings and preferences!
 music.setVolume(0.075)
 music.play()
-{% endhighlight %}
+```
 
 You should now hear music as you play!
 
@@ -33,15 +33,15 @@ You may recall that, in order to loop an animation in an Actor, we just call "lo
 
 Next, a simple sound-effect. Specifically, we're going to have a sound play whenever an enemy spawns:
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 self.enemySpawnSound = loader.loadSfx("Sounds/enemySpawn.ogg")
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "spawnEnemy" method:
 self.enemySpawnSound.play()
-{% endhighlight %}
+```
 
 And that's it. You should now hear a sound-effect whenever an enemy spawns.
 
@@ -57,19 +57,19 @@ For most of this, we'll move over to "GameObject.py".
 
 Some of our logic will want to check the status of a given sound, and the status-codes for this are stored in the "AudioSound" class, so we'll import that:
 
-{% highlight python %}
+```python
 # In your "import" statements:
 from panda3d.core import AudioSound
-{% endhighlight %}
+```
 
 Then we start adding, looping, and playing sounds. There's a fair bit of this, but it's all pretty simple, and is based on what we just did, so I'll just provide you with the code:
 
-{% highlight python %}
+```python
 # In the "__init__" method of GameObject:
 self.deathSound = None
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "alterHealth" method of GameObject:
 
 # At the start:
@@ -78,9 +78,9 @@ previousHealth = self.health
 # At the end:
 if previousHealth > 0 and self.health <= 0 and self.deathSound is not None:
     self.deathSound.play()
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "__init__" method of Player:
 self.laserSoundNoHit = loader.loadSfx("Sounds/laserNoHit.ogg")
 self.laserSoundNoHit.setLoop(True)
@@ -88,9 +88,9 @@ self.laserSoundHit = loader.loadSfx("Sounds/laserHit.ogg")
 self.laserSoundHit.setLoop(True)
 
 self.hurtSound = loader.loadSfx("Sounds/FemaleDmgNoise.ogg")
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "update" method of Player:
 
 # Directly after "if scoredHit:":
@@ -139,20 +139,20 @@ else:
     # ...
 
     # Section 3, above.
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "alterHealth" method of Player:
 self.hurtSound.play()
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "cleanup" method of Player:
 self.laserSoundHit.stop()
 self.laserSoundNoHit.stop()
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "__init__" method of WalkingEnemy:
 
 # This "deathSound" is the one that will
@@ -160,56 +160,56 @@ self.laserSoundNoHit.stop()
 # to GameObject, above
 self.deathSound = loader.loadSfx("Sounds/enemyDie.ogg")
 self.attackSound = loader.loadSfx("Sounds/enemyAttack.ogg")
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "runLogic" method of WalkingEnemy:
 
 # Just after "self.actor.play("attack"):
 self.attackSound.play()
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "__init__" method of TrapEnemy:
 self.impactSound = loader.loadSfx("Sounds/trapHitsSomething.ogg")
 self.stopSound = loader.loadSfx("Sounds/trapStop.ogg")
 self.movementSound = loader.loadSfx("Sounds/trapSlide.ogg")
 self.movementSound.setLoop(True)
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "runLogic" method of TrapEnemy:
 
 # In the "if abs(detector) < 0.5:" section--
 # that is, with "self.moveDirection = math.copysign(1, movement):
 self.movementSound.play()
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "TrapEnemy" class, we add
 # a new "cleanup" method:
 def cleanup(self):
     self.movementSound.stop()
 
     Enemy.cleanup(self)
-{% endhighlight %}
+```
 
 We're not quite done yet--but almost. We aren't currently using the sounds that we loaded for the Trap Enemies hitting something, or stopping. That logic we'll put in our collision methods, back in "Game.py":
 
-{% highlight python %}
+```python
 # In the "stopTrap" method:
 
 # In the "if collider.hasPythonTag("owner"):" section:
 trap.movementSound.stop()
 trap.stopSound.play()
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "trapHitsSomething" method:
 
 # In the "if collider.hasPythonTag("owner"):" section:
 trap.impactSound.play()
-{% endhighlight %}
+```
 
 Now we're done! When we play, we should now hear a variety of sounds, including the hum of our laser, the metallic "sikt!" of a Walking Enemy's blades, the boom of Trap Enemies hitting walls, and so on.
 

@@ -14,23 +14,23 @@ When we want to add a task to be run immediately, we have the task-manager "add"
 
 We're going to use the task-manager to run an update loop, calling a method named "update".
 
-{% highlight python %}
+```python
 # In your import statements:
 from direct.task import Task
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 self.updateTask = taskMgr.add(self.update, "update")
-{% endhighlight %}
+```
 
 (We're storing the update-task in case we want to do something with it later. We won't in this case, but it's perhaps not bad practice.)
 
-{% highlight python %}
+```python
 # Elsewhere:
 def update(self, task):
     return Task.cont
-{% endhighlight %}
+```
 
 Note that we return "Task.cont"--this is important, as it tells Panda that we want to run the task again. Without it, the task would run only once.
 
@@ -40,12 +40,12 @@ You may recall that in an earlier lesson we saw how to set the position of a Nod
 
 But if we just move it by a constant value, variations in frame-rate will vary how fast it moves. So, we will access the time since the last update via another Panda global variable, the "globalClock". We then multiply our movement by this value.
 
-{% highlight python %}
+```python
 # In your import statements, add "Vec3":
 from panda3d.core import Vec4, Vec3
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # Elsewhere:
 def update(self, task):
     # Get the amount of time since the last update
@@ -65,7 +65,7 @@ def update(self, task):
         print ("Zap!")
 
     return Task.cont
-{% endhighlight %}
+```
 
 (I've also removed the print-statement from "updateKeyMap", by the way, since we now have a more-visual means of seeing at least some of our key-pressed taking effect.)
 

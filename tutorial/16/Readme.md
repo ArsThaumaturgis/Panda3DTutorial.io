@@ -16,19 +16,19 @@ The "requirements.txt" file is pretty straightforward. Indeed, for our purposes 
 
 {% highlight text %}
 panda3d
-{% endhighlight %}
+```
 
 The "setup.py" file is a bit more complicated.
 
 To start with, the basics: from "setuptools" we import the "setup" method, and then call it, providing the details of our game as parameters. The shell of that code looks like this:
 
-{% highlight python %}
+```python
 from setuptools import setup
 
 setup(
 # Parameters go here...
 )
-{% endhighlight %}
+```
 
 There are two parameters that we'll give to it: the name of our game, and a dictionary of options.
 
@@ -36,7 +36,7 @@ In our case, we will technically have a only single option--but that "option" wi
 
 Thus:
 
-{% highlight python %}
+```python
 from setuptools import setup
 
 setup(
@@ -47,7 +47,7 @@ setup(
         }
     }
 )
-{% endhighlight %}
+```
 
 Which leaves just the build-options to be filled out.
 
@@ -69,7 +69,7 @@ We're going to use four: "include_patterns", "gui_apps", "plugins", and "platfor
 
 Thus we end up with this:
 
-{% highlight python %}
+```python
 from setuptools import setup
 
 setup(
@@ -112,7 +112,7 @@ setup(
         }
     }
 )
-{% endhighlight %}
+```
 
 Note that if we leave out the "platforms" section entirely, the build-system will automatically build for all of the default platforms. The defaults are the three that I included in our "setup.py" above, I believe.
 
@@ -126,7 +126,7 @@ The command looks as follows:
 
 {% highlight text %}
 python3 setup.py bdist_apps
-{% endhighlight %}
+```
 
 (You could use Python 2.7 at time of writing, I think, but even now it's being slowly deprecated, and furthermore may incur problems.)
 

@@ -24,16 +24,16 @@ The built-in physics system has three main elements: Traversers, Handlers, and S
 
 Often enough--and so it is in our case--we can use just a single traverser, and let it check for collisions every update. For this case, the ShowBase class provides a default variable called "cTrav": if you assign a new traverser to this variable, Panda will automatically update it for you.
 
-{% highlight python %}
+```python
 # In your import statements:
 from panda3d.core import CollisionTraverser
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 self.cTrav = CollisionTraverser()
 # Panda should now automatically update that traverser!
-{% endhighlight %}
+```
 
 Next, we want a handler. There are a number of these, but there are three that we will be using in this tutorial:
 
@@ -45,38 +45,38 @@ The "pusher" handler is a sub-class of the "event" handler. This means that a "p
 
 Making a "pusher" is quite simple:
 
-{% highlight python %}
+```python
 # In your import statements:
 from panda3d.core import CollisionHandlerPusher,
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 self.pusher = CollisionHandlerPusher()
-{% endhighlight %}
+```
 
 We'll store our reference to it, be cause we want to be able to add and remove objects as called for.
 
 Then we create a collision-object, in this case for our player-character. This involves creating a solid (we'll just use a sphere), storing that in a collision-node, and then creating a NodePath for that node, attached to our player (so that it moves with the player):
 
-{% highlight python %}
+```python
 # In your import statements:
 from panda3d.core import CollisionSphere, CollisionNode
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 colliderNode = CollisionNode("player")
 # Add a collision-sphere centred on (0, 0, 0), and with a radius of 0.3
 colliderNode.addSolid(CollisionSphere(0, 0, 0, 0.3))
 collider = self.tempActor.attachNewNode(colliderNode)
-{% endhighlight %}
+```
 
 If you want to see your collision-object, just call "show" on the collision-object's NodePath. However, this visualisation is for testing and debugging purposes--it may not be efficient, and isn't recommended for a release version of your game.
 
-{% highlight python %}
+```python
 collider.show()
-{% endhighlight %}
+```
 
 ![Panda-chan with a collision sphere](images/collisionSphere.png "Note the white circle--that's our collision sphere")
 
@@ -86,7 +86,7 @@ That is, "active" objects generate collisions with other objects (whether "activ
 
 So, finally, we tell both the traverser and the pusher that this is an object that should collide with things, an "active" object:
 
-{% highlight python %}
+```python
 # The pusher wants a collider, and a NodePath that
 # should be moved by that collider's collisions.
 # In this case, we want our player-Actor to be moved.
@@ -94,15 +94,15 @@ base.pusher.addCollider(collider, self.tempActor)
 # The traverser wants a collider, and a handler
 # that responds to that collider's collisions
 base.cTrav.addCollider(collider, self.pusher)
-{% endhighlight %}
+```
 
 In our game, the action is effectively two-dimensional: the player moves around on a flat, horizontal surface. Because of this, allowing collision responses to be three-dimensional could result in problems, like the player moving over a wall rather than being stopped by it.
 
 The "pusher" handler has a provision for such cases as this: it allows its responses to be restricted to the horizontal, like so:
 
-{% highlight python %}
+```python
 self.pusher.setHorizontal(True)
-{% endhighlight %}
+```
 
 Of course, right now there are no other collision objects, so there's nothing for the player to collide with. Let's rectify that, and add some simple walls.
 
@@ -110,12 +110,12 @@ I happen to know that the environment model has its walls at about eight units i
 
 The process is pretty much the same as with creating the player's collision-object, but we're going to use long capsule-shaped tubes instead of spheres. We also place the walls in appropriate positions once we've created them.
 
-{% highlight python %}
+```python
 # In your import statements:
 from panda3d.core import CollisionTube
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the "__init__" method:
 
 # Tubes are defined by their start-points, end-points, and radius.
@@ -144,7 +144,7 @@ wallNode = CollisionNode("wall")
 wallNode.addSolid(wallSolid)
 wall = render.attachNewNode(wallNode)
 wall.setX(-8.0)
-{% endhighlight %}
+```
 
 If we try to run around now, we'll find ourselves stopped at the walls!
 

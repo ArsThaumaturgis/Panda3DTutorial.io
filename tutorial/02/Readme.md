@@ -35,9 +35,9 @@ In the "Models" folder, you should find a file named "environment.egg". The ".eg
 Panda3D provides a number of globally-accessible variables, and one of these is "loader", the object used to load a number of different types of object--including non-animated models.
 
 To load the file, we simply add the following code to our "`__init__`" method:
-{% highlight python %}
+```python
 loader.loadModel("Models/Misc/environment")
-{% endhighlight %}
+```
 
 Note that I don't include the ".egg" suffix above. I could, but Panda3D will load the file perfectly happily without it. What's more, when we distribute games we usually distribute ".bam" versions of our models instead of ".egg", and leaving out the suffix in the code allows Panda to automatically detect which to load.
 
@@ -45,10 +45,10 @@ However, the model won't yet show up if we run the program: we've loaded it, but
 
 In this case, we'll simply attach it to the root of the scene-graph. This NodePath is automatically provided by Panda, and accessible in another global variable named "render".
 
-{% highlight python %}
+```python
 self.environment = loader.loadModel("Models/Misc/environment")
 self.environment.reparentTo(render)
-{% endhighlight %}
+```
 
 If you run the code now, you should see the environment model in the scene. It looks a bit flat--but we'll get to that...
 
@@ -56,16 +56,16 @@ Next, let's load an animated model. In Panda3D these are called "Actors", and ar
 
 Specifically, we first pass in the file for the model itself, and then pass in a Python dictionary, associating names for animations with the animation files that define those animations.
 
-{% highlight python %}
+```python
 # In your import statements:
 from direct.actor.Actor import Actor
-{% endhighlight %}
+```
 
-{% highlight python %}
+```python
 # In the body of your code--"__init__" will do for now:
 self.tempActor = Actor("Models/PandaChan/act_p3d_chan", {"walk" : "Models/PandaChan/a_p3d_chan_run"})
 self.tempActor.reparentTo(render)
-{% endhighlight %}
+```
 
 Similar to the "environment" model, "act_p3d_chan" and "a_p3d_chan_run" are ".egg" files found in the "Models/PandaChan" folder.
 
@@ -86,9 +86,9 @@ That last perhaps calls for some explanation. In short, "H", "P", and "R" here r
 (And there are a variety of other, more-specific versions of the above methods, too. For example, you can set just the x-position by calling "setX", or just the roll by calling "setR", and so on.)
 
 So, let's move the Actor to where we can see it. The camera by default looks in the positive y-direction, so we'll move it to a position on the y-axis:
-{% highlight python %}
+```python
 self.tempActor.setPos(0, 7, 0)
-{% endhighlight %}
+```
 
 You should now see the Actor framed in the doorway of the environment model!
 
@@ -96,15 +96,15 @@ You should now see the Actor framed in the doorway of the environment model!
 
 By the way, sometimes you'll get a model that doesn't face the direction that you intend. You could just rotate the model's NodePath--but that may complicate any rotations that you want to do later. As it happens, models aren't usually loaded as single nodes, but rather tend to have at least one child-node containing the models themselves. (This applies to both Actors and non-Actors.) Thus you can access this child-node, and rotate it, like so:
 
-{% highlight python %}
+```python
 self.tempActor.getChild(0).setH(180)
-{% endhighlight %}
+```
 
 With the Actor visible, let's animate it. We have a few options here, but the most fundamental are to either "play" the animation (that is, run through it once), or "loop" it (that is, run it over and over again, until we tell it to stop). Let's do the latter:
 
-{% highlight python %}
+```python
 self.tempActor.loop("walk")
-{% endhighlight %}
+```
 
 You should now see Panda-chan running in place.
 
@@ -114,13 +114,13 @@ And once again, Panda3D provides some variables providing access to the default 
 
 Remove the call to "setPos" that we added above (returning the character to the centre of the scene), and instead add this:
 
-{% highlight python %}
+```python
 # Move the camera to a position high above the screen
 # --that is, offset it along the z-axis.
 self.camera.setPos(0, 0, 32)
 # Tilt the camera down by setting its pitch.
 self.camera.setP(-90)
-{% endhighlight %}
+```
 
 ![The courtyard from above](images/topDown.png "Panda-chan in the courtyard, seen from above.")
 
