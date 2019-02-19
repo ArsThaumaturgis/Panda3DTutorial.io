@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 12
----
 Visibly Healthy
 =
 _In which we show the player's health and score, indicate how healthy the enemy is, and add some feedback to hits_

@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 3
----
 A Bit of Shading
 =
 _In which we learn about lighting and automatic shading_

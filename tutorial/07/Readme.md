@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 7
----
 Our Game's Objects
 =
 _In which we make classes for the player and an enemy_

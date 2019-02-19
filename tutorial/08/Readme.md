@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 8
----
 It's a Trap!
 =
 _In which we learn about collision events, and make a sliding trap enemy_

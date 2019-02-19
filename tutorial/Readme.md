@@ -1,7 +1,3 @@
----
-layout: page
-title: Start Here
----
 Before we begin...
 =
 

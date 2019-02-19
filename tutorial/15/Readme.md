@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 15
----
 Your Menu, Sir
 =
 _In which we build menus with DirectGUI, and provide a way to restart after game-over_

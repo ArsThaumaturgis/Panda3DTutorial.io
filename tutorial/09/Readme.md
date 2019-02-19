@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 9
----
 Mask-erade
 =
 _In which we make a laser, and learn how to specify what should collide with what._

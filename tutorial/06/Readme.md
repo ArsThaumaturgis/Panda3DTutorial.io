@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 6
----
 Bumping into Things
 =
 _In which we handle basic collision-detection and response_

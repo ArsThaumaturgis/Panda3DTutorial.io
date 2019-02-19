@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 4
----
 Taking Control
 =
 _In which we see how Panda handles input_

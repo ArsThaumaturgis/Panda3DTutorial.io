@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 2
----
 Making a Scene
 =
 _In which we discuss how Panda organises its scene, and learn how to load and manipulate models._

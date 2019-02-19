@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 14
----
 Sound Decisions
 =
 _In which we learn about handling sound and music in Panda_

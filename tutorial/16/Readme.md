@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 16
----
 Packaged with a Neat Little Bow
 =
 _In which we learn how to build a distributable version of our game_

@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 10
----
 Lasing Around
 =
 _In which we gain control of our laser!_

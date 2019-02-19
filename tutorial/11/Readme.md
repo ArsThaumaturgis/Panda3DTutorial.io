@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 11
----
 An Enemy Attacks!
 =
 _In which we give our Walking Enemy the means to attack us_

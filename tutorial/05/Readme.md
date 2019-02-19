@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 5
----
 Our Next Task
 =
 _In which we learn about updating via tasks_

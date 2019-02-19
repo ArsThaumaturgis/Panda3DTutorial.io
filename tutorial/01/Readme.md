@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 1
----
 Hello World
 =
 _In which we learn how to make and run a Panda3D instance, and how to load and manipulate models._

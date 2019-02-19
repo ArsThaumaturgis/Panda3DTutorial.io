@@ -1,7 +1,3 @@
----
-layout: page
-title: Lesson 13
----
 Endless Enemies
 =
 _In which we spawn enemies, and have them die when out of health_
