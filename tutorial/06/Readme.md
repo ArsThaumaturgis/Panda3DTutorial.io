@@ -74,7 +74,7 @@ If you want to see your collision-object, just call "show" on the collision-obje
 collider.show()
 ```
 
-![Panda-chan with a collision sphere](images/collisionSphere.png "Note the white circle--that's our collision sphere")
+![Panda-chan with a collision sphere](../images/collisionSphere.png "Note the white circle--that's our collision sphere")
 
 Now, Panda3D's built-in system doesn't check every object against every other object. (I imagine that this is for reasons of speed--it's much faster to check just a few objects.) So, only certain objects, nominated by you, are considered to be "active", and thus checked. All other physics objects are considered to be "inactive", and not checked.
 
@@ -144,7 +144,7 @@ wall.setX(-8.0)
 
 If we try to run around now, we'll find ourselves stopped at the walls!
 
-![Trying--and failing--to run through a wall](images/tutCollisionWalls.gif "The pusher prevents the player's collision-object from going through the wall's")
+![Trying--and failing--to run through a wall](../images/tutCollisionWalls.gif "The pusher prevents the player's collision-object from going through the wall's")
 
 (I've called "show" on both our player and the walls for the image above, so that the collision objects are visible.)
 

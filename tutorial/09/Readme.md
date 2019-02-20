@@ -191,7 +191,7 @@ else:
     self.beamModel.hide()
 ```
 
-![Panda-chan firing a laser](images/laserUp.png "ZAP!")
+![Panda-chan firing a laser](../images/laserUp.png "ZAP!")
 
 Of course, right now our laser starts at (0, 0, 0), points in the positive y-direction, and... stays that way. If you lure the "walking enemy" to a point just "above" centre, you may see the laser react, regardless of where you are. 
 

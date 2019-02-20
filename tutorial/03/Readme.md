@@ -60,7 +60,7 @@ self.mainLightNodePath.setHpr(45, -45, 0)
 render.setLight(self.mainLightNodePath)
 ```
 
-![Old-fashioned lighting](images/oldLighting.png "There's lighting now--but it's not very good...")
+![Old-fashioned lighting](../images/oldLighting.png "There's lighting now--but it's not very good...")
 
 Ah! Now things have a bit more form! But it's still a somewhat lacking. This is because it's using old-fashioned lighting. Games these days often use shaders, allowing for things like per-pixel lighting and normal-maps that increase the amount of detail in a scene without increasing the number of polygons.
 
@@ -71,7 +71,7 @@ Activating it is quite simple: just call "setShaderAuto" on the NodePath that yo
 render.setShaderAuto()
 ```
 
-![Normal-mapped, per-pixel lighting](images/normalMapped.png "Much more detailed and interesting to look at!")
+![Normal-mapped, per-pixel lighting](../images/normalMapped.png "Much more detailed and interesting to look at!")
 
 There! Much better, I think!
 

@@ -272,7 +272,7 @@ self.finalScoreLabel = DirectLabel(text = "",
 
 Thus the final result looks like this:
 
-![The game-over screen, now using images and a font.](images/gameOverScreen.png "A conclusion with a bit more personality.")
+![The game-over screen, now using images and a font.](../images/gameOverScreen.png "A conclusion with a bit more personality.")
 
 Next, we'll build a simple main menu. It will have:
 * A title (using three DirectLabels, for easy variation of colour, backing, and size)
@@ -360,7 +360,7 @@ btn = DirectButton(text = "Quit",
 btn.setTransparency(True)
 ```
 
-![Our main menu.](images/mainMenu.png "First impressions")
+![Our main menu.](../images/mainMenu.png "First impressions")
 
 Our title-menu is complete, and shows up if we run the game. The problem is that our level also starts in the background, even though we can't see it. (Aside from the health-icons, which should still appear at the top-left.) This is, of course, because we're calling "startGame" in our "\_\_init\_\_" method.
 

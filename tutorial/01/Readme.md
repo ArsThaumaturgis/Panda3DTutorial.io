@@ -19,7 +19,7 @@ game.run()
 
 If you run the code above, a window should open titled "Panda", and showing an empty grey view:
 
-![A grey window](images/greyWindow.png "Not very exciting, but a start!")
+![A grey window](../images/greyWindow.png "Not very exciting, but a start!")
 
 By default, Panda3D opens an 800x600 window, which can be somewhat small. So, let's make it a little bigger.
 

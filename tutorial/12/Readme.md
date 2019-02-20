@@ -85,7 +85,7 @@ def updateHealthVisual(self):
 
 Now we can see the effect of damage done, on both our player-character and the enemy!
 
-![Player-health is lost as the enemy attacks, and enemy health is lost as the player attacks.](images/tutHealthAndScoreBasic.gif "'Take that, and that, and that!' 'Now it's my turn! Take this!'")
+![Player-health is lost as the enemy attacks, and enemy health is lost as the player attacks.](../images/tutHealthAndScoreBasic.gif "'Take that, and that, and that!' 'Now it's my turn! Take this!'")
 
 Next, let's attend to our laser. It's not all that satisfying to hit enemies with it--it does damage, but there's little feedback as it does. A hit looks no different to a miss.
 
@@ -222,7 +222,7 @@ So why not use "setLightOff" here? Because those "notes" (called "attribs") accu
 
 With all that done, our laser should now be a bit more striking when it hits a Walking Enemy!
 
-![A hit with the laser now shows a pulsing hit-flash, and a localised light.](images/tutLaserLight.gif "Now that's a laser that's doing some damage!")
+![A hit with the laser now shows a pulsing hit-flash, and a localised light.](../images/tutLaserLight.gif "Now that's a laser that's doing some damage!")
 
 And finally, we'll turn the tables and add a hit-flash that shows that the player has taken damage.
 
@@ -262,7 +262,7 @@ self.damageTakenModelTimer = self.damageTakenModelDuration
 
 Now hits against the player should hopefully feel a bit more impactful, too!
 
-![Panda-chan is hit by a trap, then a Walking Enemy, producing hit-flashes.](images/tutPlayerHitFlash.gif "Ow! Stopit!")
+![Panda-chan is hit by a trap, then a Walking Enemy, producing hit-flashes.](../images/tutPlayerHitFlash.gif "Ow! Stopit!")
 
 Of course, as things stand, neither enemy nor player actually suffers from losing health. We'll get to the player later, but let's change this for our Walking Enemies next. Indeed, let's get them both dying and spawning next...
 

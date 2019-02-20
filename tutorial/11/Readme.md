@@ -150,7 +150,7 @@ def cleanup(self):
 
 And that's it! If you run the game now, you should find that our WalkingEnemy not only chases the player, but attacks when in range, too!
 
-![An enemy chases and attacks the player-character.](images/tutEnemyAttack.gif "Finally! My blades are set free!!! >:D")
+![An enemy chases and attacks the player-character.](../images/tutEnemyAttack.gif "Finally! My blades are set free!!! >:D")
 
 This is all very well and good, but right now all those hits and collisions don't have much effect. To start with, let's add some visual feedback: beam-impacts, hit-flashes, and a bit of UI...
 

@@ -278,7 +278,7 @@ if self.player is not None:
 
 And now we have something like a real game! Enemies spawn and attack us! Traps destroy player-character and enemy alike! We can even gain points for each enemy defeated! And when at last we fall to the endless horde, play stops!
 
-![Panda-chan runs, shoots, is chased, and springs traps!](images/tutStartOfAGame.gif "So much moving stuff!")
+![Panda-chan runs, shoots, is chased, and springs traps!](../images/tutStartOfAGame.gif "So much moving stuff!")
 
 It... is all a bit quiet, however, isn't it? Perhaps some sound and music would help...
 

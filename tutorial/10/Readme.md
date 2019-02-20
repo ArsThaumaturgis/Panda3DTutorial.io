@@ -100,7 +100,7 @@ if firingVector.length() > 0.001:
 self.lastMousePos = mousePos
 ```
 
-![Panda-chan runs around, shooting a laser towards the mouse-pointer.](images/tutHarmlessLaser.gif "Bwee! Bzzz!")
+![Panda-chan runs around, shooting a laser towards the mouse-pointer.](../images/tutHarmlessLaser.gif "Bwee! Bzzz!")
 
 Of course, it's not fair that the walking enemy can be hit by both us _and_ the traps, but can't do anything itself. So let's give it the ability to attack, too...
 

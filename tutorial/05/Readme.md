@@ -65,7 +65,7 @@ def update(self, task):
 
 (I've also removed the print-statement from "updateKeyMap", by the way, since we now have a more-visual means of seeing at least some of our key-pressed taking effect.)
 
-![Panda-chan running around due to key-movement](images/tutMasicKeyMovement.gif "Run run run.")
+![Panda-chan running around due to key-movement](../images/tutMasicKeyMovement.gif "Run run run.")
 
 Of course, right now we can just run through the walls. That won't do...
 

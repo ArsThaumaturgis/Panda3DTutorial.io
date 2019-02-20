@@ -332,7 +332,7 @@ self.tempEnemy.update(self.player, dt)
 
 If you run the game now, you should be able to move the player, much as before--but you'll also be chased around (harmlessly--for now) by an enemy!
 
-![The player is chased by an enemy](images/tutHarmlessChase.gif "A merry chase!")
+![The player is chased by an enemy](../images/tutHarmlessChase.gif "A merry chase!")
 
 Next, let's see how we handle collision events, via our trap enemy...
 

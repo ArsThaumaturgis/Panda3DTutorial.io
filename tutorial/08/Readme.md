@@ -147,7 +147,7 @@ Note the use of our Python-tags to access the GameObjects associated with the co
 
 Our player and enemy don't really react to taking damage just yet--but at least we can see the trap going back and forth now.
 
-![A "trap" moving back and forth, colliding harmlessly](images/tutHarmlessTrap.gif "Bump. Bump.")
+![A "trap" moving back and forth, colliding harmlessly](../images/tutHarmlessTrap.gif "Bump. Bump.")
 
 We'll get to reactions to damage soon enough, but first, let's provide our player with a way to fight back...
 

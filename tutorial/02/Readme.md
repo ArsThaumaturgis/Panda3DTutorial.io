@@ -12,13 +12,13 @@ You can imagine this heirarchy as looking a bit like a baby's mobile, with nodes
 
 This relationship between objects is referred to as a "parent-child" relationship: for a given node, the node above is its "parent", and any nodes below are its "children".
 
-![A node-heirarchy visualised as a child's mobile](images/mobile.png "Child-nodes for children?")
+![A node-heirarchy visualised as a child's mobile](../images/mobile.png "Child-nodes for children?")
 
 Furthermore, the state of a given node--such as its position, or scale--is _relative_ to that of its parent. That is, a position of "zero" means "at the same location as its parent"; a rotation of "zero" means "facing the same way as its parent"; and so on. Thus each node affects its child-nodes, and their children, and so on.
 
 You can think of it as being a bit like the arm of an articulated figurine: moving the lower arm results in effectively no change to the upper arm. However, moving the upper arm results in the lower arm being moved accordingly. Furthermore, if the upper arm is rotated to point upwards, the lower arm likewise points up, and any rotations of the lower arm are relative to that orientation.
 
-![Robot arms demonstrating relative rotation](images/arms.png "Rotating the parent rotates the child, but not vice versa.")
+![Robot arms demonstrating relative rotation](../images/arms.png "Rotating the parent rotates the child, but not vice versa.")
 
 However, most of the time we don't interact directly with nodes. Instead, we work with an intermediary called a "NodePath". This essentially describes a route through the scene-graph from the root to the node in question. It's even possible to have more than one distinct NodePath for a single node.
 
@@ -77,7 +77,7 @@ These are achieved quite simply, via a suite of methods provided by NodePath: Fo
 
 That last perhaps calls for some explanation. In short, "H", "P", and "R" here refer to "Heading", "Pitch", and "Roll", as in an aircraft. "Heading" is turning to the left or right--that is, around the "z"-axis. "Pitch" is rotation up and down--that is, around the "x"-axis. Roll is tilting to the left or right--that is, rotation around the "y"-axis.
 
-![An illustration of H, P, and R rotation](images/HPR.png "An odd system? Just roll with it.")
+![An illustration of H, P, and R rotation](../images/HPR.png "An odd system? Just roll with it.")
 
 (And there are a variety of other, more-specific versions of the above methods, too. For example, you can set just the x-position by calling "setX", or just the roll by calling "setR", and so on.)
 
@@ -88,7 +88,7 @@ self.tempActor.setPos(0, 7, 0)
 
 You should now see the Actor framed in the doorway of the environment model!
 
-![Actor and environment loaded](images/frontView.png "Panda-chan, framed in a sandstone doorway.")
+![Actor and environment loaded](../images/frontView.png "Panda-chan, framed in a sandstone doorway.")
 
 By the way, sometimes you'll get a model that doesn't face the direction that you intend. You could just rotate the model's NodePath--but that may complicate any rotations that you want to do later. As it happens, models aren't usually loaded as single nodes, but rather tend to have at least one child-node containing the models themselves. (This applies to both Actors and non-Actors.) Thus you can access this child-node, and rotate it, like so:
 
@@ -118,7 +118,7 @@ self.camera.setPos(0, 0, 32)
 self.camera.setP(-90)
 ```
 
-![The courtyard from above](images/topDown.png "Panda-chan in the courtyard, seen from above.")
+![The courtyard from above](../images/topDown.png "Panda-chan in the courtyard, seen from above.")
 
 But it still all looks so flat. Let's fix that...
 
