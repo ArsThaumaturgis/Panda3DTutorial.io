@@ -51,6 +51,4 @@ self.disableMouse()
 
 Next, let's consider adding some models to the scene...
 
-[On to Lesson 2][next]
-
-[next]: tut_lesson02.html
+[On to Lesson 2](../02-scene)
