@@ -150,6 +150,4 @@ If we try to run around now, we'll find ourselves stopped at the walls!
 
 With the basics of collision in place, it's time to lay the foundation for our core gameplay...
 
-[On to Lesson 7][next]
-
-[next]: tut_lesson07.html
+[On to Lesson 7](../07-game-objects)

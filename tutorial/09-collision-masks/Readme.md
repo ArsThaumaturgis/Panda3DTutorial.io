@@ -197,6 +197,4 @@ Of course, right now our laser starts at (0, 0, 0), points in the positive y-dir
 
 We'll have our laser fire towards the mouse-cursor, and start at the player-character's position. Furthermore, we'll have our character face the direction in which we're firing. As it happens, these two things work together nicely...
 
-[On to Lesson 10][next]
-
-[next]: tut_lesson10.html
+[On to Lesson 10](../10-mouse)

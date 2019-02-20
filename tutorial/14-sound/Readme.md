@@ -211,7 +211,6 @@ Now we're done! When we play, we should now hear a variety of sounds, including 
 
 This is starting to look almost like a complete game. But there are two major things missing: a way to restart the game after the player loses, and a main menu to present at the game's start...
 
-[On to Lesson 15][next]
+[On to Lesson 15](../15-gui)
 
-[next]: tut_lesson15.html
 [soundimage]: http://www.soundimage.org

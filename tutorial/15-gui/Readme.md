@@ -398,7 +398,6 @@ The next question then is that of how to distribute our game to others. I suppos
 
 So let's look into building a distributable...
 
-[On to Lesson 16][next]
+[On to Lesson 16](../16-packaging)
 
-[next]: tut_lesson16.html
 [soundimage]: http://www.soundimage.org

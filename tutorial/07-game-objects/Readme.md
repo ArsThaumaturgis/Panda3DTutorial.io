@@ -336,6 +336,4 @@ If you run the game now, you should be able to move the player, much as before--
 
 Next, let's see how we handle collision events, via our trap enemy...
 
-[On to Lesson 8][next]
-
-[next]: tut_lesson08.html
+[On to Lesson 8](../08-collision-events)

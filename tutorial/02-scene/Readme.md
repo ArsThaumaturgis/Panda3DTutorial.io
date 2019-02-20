@@ -122,6 +122,4 @@ self.camera.setP(-90)
 
 But it still all looks so flat. Let's fix that...
 
-[On to Lesson 3][next]
-
-[next]: tut_lesson03.html
+[On to Lesson 3](../03-shading)

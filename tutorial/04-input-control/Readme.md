@@ -67,6 +67,4 @@ self.accept("mouse1-up", self.updateKeyMap, ["shoot", False])
 
 This still doesn't do much, of course. So, let's tie those controls to a more interesting set of reponses...
 
-[On to Lesson 5][next]
-
-[next]: tut_lesson05.html
+[On to Lesson 5](../05-tasks)

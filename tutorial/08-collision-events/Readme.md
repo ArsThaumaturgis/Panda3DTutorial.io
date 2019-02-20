@@ -151,6 +151,4 @@ Our player and enemy don't really react to taking damage just yet--but at least 
 
 We'll get to reactions to damage soon enough, but first, let's provide our player with a way to fight back...
 
-[On to Lesson 9][next]
-
-[next]: tut_lesson09.html
+[On to Lesson 9](../09-collision-masks)

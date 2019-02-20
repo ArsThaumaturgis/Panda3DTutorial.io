@@ -69,6 +69,4 @@ def update(self, task):
 
 Of course, right now we can just run through the walls. That won't do...
 
-[On to Lesson 6][next]
-
-[next]: tut_lesson06.html
+[On to Lesson 6](../06-collision-detection)

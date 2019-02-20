@@ -77,6 +77,4 @@ There! Much better, I think!
 
 Of course, this game doesn't do much yet. Let's change that next...
 
-[On to Lesson 4][next]
-
-[next]: tut_lesson04.html
+[On to Lesson 4](../04-input-control)

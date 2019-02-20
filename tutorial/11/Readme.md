@@ -154,6 +154,4 @@ And that's it! If you run the game now, you should find that our WalkingEnemy no
 
 This is all very well and good, but right now all those hits and collisions don't have much effect. To start with, let's add some visual feedback: beam-impacts, hit-flashes, and a bit of UI...
 
-[On to Lesson 12][next]
-
-[next]: tut_lesson12.html
+[On to Lesson 12](../12-onscreen-text)

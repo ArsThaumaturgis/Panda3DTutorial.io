@@ -76,7 +76,7 @@ When these assets are mentioned in the tutorial, take note of the directories th
 And now, let us begin...
 -
 
-[On to lesson 1][lesson1]
+[On to Lesson 1](01-hello)
 
 [lesson1]: tut_lesson01.html
 [samplemodels]: https://github.com/ArsThaumaturgis/PandaSampleModels

@@ -282,6 +282,4 @@ And now we have something like a real game! Enemies spawn and attack us! Traps d
 
 It... is all a bit quiet, however, isn't it? Perhaps some sound and music would help...
 
-[On to Lesson 14][next]
-
-[next]: tut_lesson14.html
+[On to Lesson 14](../14-sound)
