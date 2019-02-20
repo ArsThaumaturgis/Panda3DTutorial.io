@@ -120,7 +120,7 @@ To do that, we open a console, and run our "setup.py" script, passing to it the 
 
 The command looks as follows:
 
-{% highlight text %}
+```bash
 python3 setup.py bdist_apps
 ```
 
@@ -133,4 +133,3 @@ The "build" directory holds the newly-built game, albeit unpackaged, as well as 
 The "dist" directory, however, holds the packaged version of the built game--ready to be distributed!
 
 On to Lesson--wait, no, that's it! We have completed the tutorial, and if all has gone well, you should have your first complete Panda3D game! Congratulations and well done on doing so, and I hope that you enjoy the rest of your time with Panda3D, should you choose to continue with it.
-
