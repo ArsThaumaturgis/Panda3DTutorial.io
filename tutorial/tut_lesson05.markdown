@@ -15,11 +15,6 @@ When we want to add a task to be run immediately, we have the task-manager "add"
 We're going to use the task-manager to run an update loop, calling a method named "update".
 
 {% highlight python %}
-# In your import statements:
-from direct.task import Task
-{% endhighlight %}
-
-{% highlight python %}
 # In the "__init__" method:
 self.updateTask = taskMgr.add(self.update, "update")
 {% endhighlight %}
@@ -29,10 +24,10 @@ self.updateTask = taskMgr.add(self.update, "update")
 {% highlight python %}
 # Elsewhere:
 def update(self, task):
-    return Task.cont
+    return task.cont
 {% endhighlight %}
 
-Note that we return "Task.cont"--this is important, as it tells Panda that we want to run the task again. Without it, the task would run only once.
+Note that we return "task.cont"--this is important, as it tells Panda that we want to run the task again. Without it, the task would run only once.
 
 Now, let's have those controls actually do something! Specifically, let's move our character around a bit.
 
@@ -64,7 +59,7 @@ def update(self, task):
     if self.keyMap["shoot"]:
         print ("Zap!")
 
-    return Task.cont
+    return task.cont
 {% endhighlight %}
 
 (I've also removed the print-statement from "updateKeyMap", by the way, since we now have a more-visual means of seeing at least some of our key-pressed taking effect.)

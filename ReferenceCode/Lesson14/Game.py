@@ -12,7 +12,6 @@
 from direct.showbase.ShowBase import ShowBase
 
 from direct.actor.Actor import Actor
-from direct.task import Task
 from panda3d.core import CollisionTraverser, CollisionHandlerPusher, CollisionSphere, CollisionTube, CollisionNode
 from panda3d.core import AmbientLight, DirectionalLight
 from panda3d.core import Vec4, Vec3
@@ -274,7 +273,7 @@ class Game(ShowBase):
                     if self.spawnInterval > self.minimumSpawnInterval:
                         self.spawnInterval -= 0.1
 
-        return Task.cont
+        return task.cont
 
     def cleanup(self):
         for enemy in self.enemies:

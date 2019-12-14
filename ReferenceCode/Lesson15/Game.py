@@ -12,7 +12,6 @@
 from direct.showbase.ShowBase import ShowBase
 
 from direct.actor.Actor import Actor
-from direct.task import Task
 from panda3d.core import CollisionTraverser, CollisionHandlerPusher, CollisionSphere, CollisionTube, CollisionNode
 from panda3d.core import AmbientLight, DirectionalLight
 from panda3d.core import Vec4, Vec3
@@ -395,7 +394,7 @@ class Game(ShowBase):
                     self.finalScoreLabel["text"] = "Final score: " + str(self.player.score)
                     self.finalScoreLabel.setText()
 
-        return Task.cont
+        return task.cont
 
     def cleanup(self):
         for enemy in self.enemies:

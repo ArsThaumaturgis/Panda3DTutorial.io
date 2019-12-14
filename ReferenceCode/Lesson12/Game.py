@@ -12,7 +12,6 @@
 from direct.showbase.ShowBase import ShowBase
 
 from direct.actor.Actor import Actor
-from direct.task import Task
 from panda3d.core import CollisionTraverser, CollisionHandlerPusher, CollisionSphere, CollisionTube, CollisionNode
 from panda3d.core import AmbientLight, DirectionalLight
 from panda3d.core import Vec4, Vec3
@@ -144,7 +143,7 @@ class Game(ShowBase):
         self.tempEnemy.update(self.player, dt)
         self.tempTrap.update(self.player, dt)
 
-        return Task.cont
+        return task.cont
 
 
 game = Game()
