@@ -152,6 +152,8 @@ If we try to run around now, we'll find ourselves stopped at the walls!
 
 (I've called "show" on both our player and the walls for the image above, so that the collision objects are visible.)
 
+(Note, by the way, that the reference code doesn't include the calls to "show" that are mentioned in this lesson. They're included here to teach their use and to show the collision objects that we've just made--but as debugging and visualisation tools, they're only temporary.)
+
 With the basics of collision in place, it's time to lay the foundation for our core gameplay...
 
 [On to Lesson 7][next]
