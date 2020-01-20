@@ -47,7 +47,7 @@ Making a "pusher" is quite simple:
 
 {% highlight python %}
 # In your import statements:
-from panda3d.core import CollisionHandlerPusher,
+from panda3d.core import CollisionHandlerPusher
 {% endhighlight %}
 
 {% highlight python %}
