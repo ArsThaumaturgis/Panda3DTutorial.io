@@ -47,7 +47,9 @@ The reference code directory should be available here:
 The assets for the tutorial
 -
 
-This tutorial makes use of a variety of assets, from a variety of sources. So that you can build the tutorial game yourself, let me link to them here.
+This tutorial makes use of a variety of assets, from a variety of sources. The location for each asset should be as indicated in the tutorial-code that loads it, with paths assumed to be relative to the root-directory of the project on your system.
+
+So that you can build the tutorial game yourself, let me link to them here.
 
 Note that each set of assets has its own license. If you intend to use any of the following in your own works, and especially if you plan on distributing them in any way, I recommend that you check those licenses! (But I am not a lawyer, and this is not legal advice.)
 
