@@ -20,6 +20,7 @@ You can create an ambient light like so:
 {% highlight python %}
 # In your import statements:
 from panda3d.core import AmbientLight
+from panda3d.core import Vec4
 {% endhighlight %}
 
 {% highlight python %}
@@ -57,6 +58,12 @@ This doesn't make our scene any less flat, however. For that we want a slightly 
 
 The process is much the same, with a few differences: we're not going to change the light's colour (although we could, if we so desired), but we are going to change the light's direction:
 {% highlight python %}
+# In your import statements:
+from panda3d.core import DirectionalLight
+{% endhighlight %}
+
+{% highlight python %}
+# In the body of your code
 mainLight = DirectionalLight("main light")
 self.mainLightNodePath = render.attachNewNode(mainLight)
 # Turn it around by 45 degrees, and tilt it down by 45 degrees
