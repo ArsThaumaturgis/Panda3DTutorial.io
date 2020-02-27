@@ -51,7 +51,19 @@ This tutorial makes use of a variety of assets, from a variety of sources.
 
 The intended location for each asset should be as indicated in the tutorial-code that loads it, with paths assumed to be relative to the root-directory of the project on your system.
 
-So that you can build the tutorial game yourself, let me link to them here.
+As to where to place their textures, that varies somewhat:
+
+* The textures for the models found in the "Panda Sample Models" repository (see below) are stored simply in a common folder called "tex", located in the same directory as the model-file.
+
+     * That is, if a model-file were stored in the folder "myProject/Models/", then its textures would go into a folder called "myProject/Models/tex/".
+
+     * (And while the repository gives the textures for each model separately, that's just a matter of organisation, I believe--simply lump all the textures into a single "tex" folder.)
+
+* The "Panda-chan" model is similar, but instead of the "tex" folder used by the above, it uses a folder named "texture".
+
+* And finally, the UI-textures are stored in a folder named "UI". Note that they have no associated models, and the "UI" folder is intended to simply be placed in the base project directory (i.e. the same directory that holds the game's Python-files).
+
+So that you can build the tutorial game yourself, let me link to these assets here.
 
 Note that each set of assets has its own license. If you intend to use any of the following in your own works, and especially if you plan on distributing them in any way, I recommend that you check those licenses! (But I am not a lawyer, and this is not legal advice.)
 
