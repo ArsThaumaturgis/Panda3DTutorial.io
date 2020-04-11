@@ -49,21 +49,21 @@ Table of Contents
 
 To begin with, I recommend that you [start here][startHere]
 
-[startHere]: tutorial/prologue.html
-[lesson01]: tutorial/tut_lesson01.html
-[lesson02]: tutorial/tut_lesson02.html
-[lesson03]: tutorial/tut_lesson03.html
-[lesson04]: tutorial/tut_lesson04.html
-[lesson05]: tutorial/tut_lesson05.html
-[lesson06]: tutorial/tut_lesson06.html
-[lesson07]: tutorial/tut_lesson07.html
-[lesson08]: tutorial/tut_lesson08.html
-[lesson09]: tutorial/tut_lesson09.html
-[lesson10]: tutorial/tut_lesson10.html
-[lesson11]: tutorial/tut_lesson11.html
-[lesson12]: tutorial/tut_lesson12.html
-[lesson13]: tutorial/tut_lesson13.html
-[lesson14]: tutorial/tut_lesson14.html
-[lesson15]: tutorial/tut_lesson15.html
-[lesson16]: tutorial/tut_lesson16.html
+[startHere]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/prologue.html
+[lesson01]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson01.html
+[lesson02]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson02.html
+[lesson03]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson03.html
+[lesson04]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson04.html
+[lesson05]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson05.html
+[lesson06]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson06.html
+[lesson07]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson07.html
+[lesson08]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson08.html
+[lesson09]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson09.html
+[lesson10]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson10.html
+[lesson11]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson11.html
+[lesson12]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson12.html
+[lesson13]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson13.html
+[lesson14]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson14.html
+[lesson15]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson15.html
+[lesson16]: https://arsthaumaturgis.github.io/Panda3DTutorial.io/tutorial/tut_lesson16.html
 [gitHub]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io
