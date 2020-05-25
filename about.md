@@ -8,7 +8,7 @@ Welcome to this "Beginner's Tutorial for Panda3D"!
 
 This tutorial will hopefully teach you the basics of creating a game using the Panda3D engine, from the fundamentals to building a distributable version.
 
-(The GitHub repositiory for this tutorial can be found [here][gitHub]. If you encounter any issues, or want to suggest any improvements, you can file them in the issue-tracker or pull-request-tracker found there!)
+(The GitHub repository for this tutorial can be found [here][gitHub]. If you encounter any issues, or want to suggest any improvements, you can file them in the issue-tracker or pull-request-tracker found there!)
 
 Table of Contents
 -
