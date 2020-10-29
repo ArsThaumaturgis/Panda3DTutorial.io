@@ -17,6 +17,8 @@ from panda3d.core import CollisionSegment
 
 {% highlight python %}
 # In the "__init__" method of "WalkingEnemy":
+self.attackSegment = CollisionSegment(0, 0, 0, 1, 0, 0)
+
 segmentNode = CollisionNode("enemyAttackSegment")
 segmentNode.addSolid(self.attackSegment)
 
