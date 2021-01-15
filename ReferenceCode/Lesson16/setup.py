@@ -36,7 +36,16 @@ setup(
                 "manylinux1_x86_64",
                 #"macosx_10_6_x86_64",
                 #"win_amd64"
-            ]
+            ],
+            # The name of our log-file. We're keeping
+            # the directory-name short--our title is kinda long--
+            # and we're placing the file within the user's
+            # "app-data" directory.
+            "log_filename" : "$USER_APPDATA/PandaChanAndHorde/output.log",
+            # Instead of allowing log-data to accumulate,
+            # we're here choosing to start the log fresh
+            # on each run.
+            "log_append" : False
         }
     }
 )
