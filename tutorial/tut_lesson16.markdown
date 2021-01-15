@@ -69,7 +69,7 @@ We're going to use six: "include_patterns", "gui_apps", "plugins", "platforms", 
 
 * "log_filename" tells Panda what to call the log-file that it creates for reporting various pieces of output--in particular things like warnings and errors.
     
-    * This may seem unimportant--after all, we've thus far been able to see these pieces of output in our console! However, under Windows and Mac, _no_ such output is given by a distributable outside of a log-file. This can make the debugging of any issues that turn up in a distributable very difficult indeed! Thus it's a very good idea to have a log!
+    * This may seem unimportant--after all, we've thus far been able to see these pieces of output in our console! However, under Windows and Mac, distributable builds will give _no_ such output outside of a log-file. This can make the debugging of any issues that turn up in a distributable very difficult indeed! Thus it's a very good idea to have a log!
     
 * "log_append" simply indicates whether Panda should allow the log-file to accumulate output from multiple runs, or wipe it clean and start anew on each run.
 
