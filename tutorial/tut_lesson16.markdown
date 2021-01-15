@@ -51,7 +51,7 @@ setup(
 
 Which leaves just the build-options to be filled out.
 
-We're going to use four: "include_patterns", "gui_apps", "plugins", and "platforms".
+We're going to use six: "include_patterns", "gui_apps", "plugins", "platforms", "log_filename", and "log_append".
 
 * "include_patterns" indicates which files should be part of the final product. Some of these will be processed (like "egg" files being converted to "bam" files), while others will be included as-is.
 
@@ -66,6 +66,12 @@ We're going to use four: "include_patterns", "gui_apps", "plugins", and "platfor
 * "plugins" indicates which Panda3D plugins we want to use. This includes things like OpenGL, OpenAL, FMod, support for additional model-file types, and so on.
 
 * "platforms" is simply what operating systems we want to build for (and in some cases, whether to build for 32- or 64- bit systems). I'll include Windows, Mac, and Linux options in the "platforms" section below--just remove those that you don't want.
+
+* "log_filename" tells Panda what to call the log-file that it creates for reporting various pieces of output--in particular things like warnings and errors.
+    
+    * This may seem unimportant--after all, we've thus far been able to see these pieces of output in our console! However, under Windows and Mac, _no_ such output is given by a distributable outside of a log-file. This can make the debugging of any issues that turn up in a distributable very difficult indeed! Thus it's a very good idea to have a log!
+    
+* "log_append" simply indicates whether Panda should allow the log-file to accumulate output from multiple runs, or wipe it clean and start anew on each run.
 
 Thus we end up with this:
 
@@ -108,7 +114,16 @@ setup(
                 "manylinux1_x86_64",
                 "macosx_10_6_x86_64",
                 "win_amd64"
-            ]
+            ],
+            # The name of our log-file. We're keeping
+            # the directory-name short--our title is kinda long--
+            # and we're placing the file within the user's
+            # "app-data" directory.
+            "log_filename" : "$USER_APPDATA/PandaChanAndHorde/output.log",
+            # Instead of allowing log-data to accumulate,
+            # we're here choosing to start the log fresh
+            # on each run.
+            "log_append" : False
         }
     }
 )
