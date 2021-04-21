@@ -215,7 +215,10 @@ Now we're done! When we play, we should now hear a variety of sounds, including 
 
 This is starting to look almost like a complete game. But there are two major things missing: a way to restart the game after the player loses, and a main menu to present at the game's start...
 
+[This lesson's reference code][refCode]
+
 [On to Lesson 15][next]
 
 [next]: tut_lesson15.html
 [soundimage]: http://www.soundimage.org
+[refCode]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode/Lesson14

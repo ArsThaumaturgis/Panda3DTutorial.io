@@ -88,6 +88,9 @@ There! Much better, I think!
 
 Of course, this game doesn't do much yet. Let's change that next...
 
+[This lesson's reference code][refCode]
+
 [On to Lesson 4][next]
 
 [next]: tut_lesson04.html
+[refCode]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode/Lesson3

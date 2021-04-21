@@ -133,6 +133,8 @@ setup(
 
 Note that if we leave out the "platforms" section entirely, the build-system will automatically build for all of the default platforms. The defaults are the three that I included in our "setup.py" above, I believe.
 
+Note also that the specific names for the various platforms may have changed since the original time of writing--so "macosx_10_6_x86_64" might become "macosx_10_9_x86_64", and later something else again. I suggest checking the current names of the platforms that you intend to use!
+
 There are a variety of other options available for use in the "setup.py" script. For a fuller list, and a more in-depth explanation, see the manual!
 
 So, with all of that in place, only one thing remains to be done: to actually run the command that sets our game building!
@@ -155,3 +157,5 @@ The "dist" directory, however, holds the packaged version of the built game--rea
 
 On to Lesson--wait, no, that's it! We have completed the tutorial, and if all has gone well, you should have your first complete Panda3D game! Congratulations and well done on doing so, and I hope that you enjoy the rest of your time with Panda3D, should you choose to continue with it.
 
+[This lesson's reference code][refCode]
+[refCode]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode/Lesson16

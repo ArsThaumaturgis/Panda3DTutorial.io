@@ -156,6 +156,9 @@ If we try to run around now, we'll find ourselves stopped at the walls!
 
 With the basics of collision in place, it's time to lay the foundation for our core gameplay...
 
+[This lesson's reference code][refCode]
+
 [On to Lesson 7][next]
 
 [next]: tut_lesson07.html
+[refCode]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode/Lesson6

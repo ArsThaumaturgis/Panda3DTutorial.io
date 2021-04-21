@@ -286,6 +286,9 @@ And now we have something like a real game! Enemies spawn and attack us! Traps d
 
 It... is all a bit quiet, however, isn't it? Perhaps some sound and music would help...
 
+[This lesson's reference code][refCode]
+
 [On to Lesson 14][next]
 
 [next]: tut_lesson14.html
+[refCode]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode/Lesson13

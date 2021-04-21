@@ -55,6 +55,9 @@ self.disableMouse()
 
 Next, let's consider adding some models to the scene...
 
+[This lesson's reference code][refCode]
+
 [On to Lesson 2][next]
 
 [next]: tut_lesson02.html
+[refCode]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode/Lesson1

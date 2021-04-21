@@ -340,6 +340,9 @@ If you run the game now, you should be able to move the player, much as before--
 
 Next, let's see how we handle collision events, via our trap enemy...
 
+[This lesson's reference code][refCode]
+
 [On to Lesson 8][next]
 
 [next]: tut_lesson08.html
+[refCode]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode/Lesson7

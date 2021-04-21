@@ -108,6 +108,9 @@ self.lastMousePos = mousePos
 
 Of course, it's not fair that the walking enemy can be hit by both us _and_ the traps, but can't do anything itself. So let's give it the ability to attack, too...
 
+[This lesson's reference code][refCode]
+
 [On to Lesson 11][next]
 
 [next]: tut_lesson11.html
+[refCode]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode/Lesson10

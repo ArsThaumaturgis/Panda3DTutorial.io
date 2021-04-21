@@ -402,7 +402,10 @@ The next question then is that of how to distribute our game to others. I suppos
 
 So let's look into building a distributable...
 
+[This lesson's reference code][refCode]
+
 [On to Lesson 16][next]
 
 [next]: tut_lesson16.html
 [soundimage]: http://www.soundimage.org
+[refCode]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode/Lesson15

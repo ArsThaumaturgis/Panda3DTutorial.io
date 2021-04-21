@@ -64,10 +64,19 @@ def update(self, task):
 
 (I've also removed the print-statement from "updateKeyMap", by the way, since we now have a more-visual means of seeing at least some of our key-pressed taking effect.)
 
+Now, I mentioned in the previous lesson, I believe, the case of key-presses that aren't held down, that instead have an immediate effect. It might be tempting, given the key-handling code that we've developed here, to attempt to use said code to handle even such immediate-effect keys.
+
+I strongly recommend that one not do so: it can be unreliable, as quick key-presses may be missed by the update cycle, and the code to prevent the effect from repeating as the key is held can overcomplicate things.
+
+Instead, I recommend simply having the events of immediate-effect keys call one or more separate methods, which then handle or call the relevant logic.
+
 ![Panda-chan running around due to key-movement](images/tutMasicKeyMovement.gif "Run run run.")
 
 Of course, right now we can just run through the walls. That won't do...
 
+[This lesson's reference code][refCode]
+
 [On to Lesson 6][next]
 
 [next]: tut_lesson06.html
+[refCode]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode/Lesson5

@@ -126,6 +126,9 @@ self.camera.setP(-90)
 
 But it still all looks so flat. Let's fix that...
 
+[This lesson's reference code][refCode]
+
 [On to Lesson 3][next]
 
 [next]: tut_lesson03.html
+[refCode]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode/Lesson2

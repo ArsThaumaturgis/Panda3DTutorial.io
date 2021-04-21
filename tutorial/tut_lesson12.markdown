@@ -270,6 +270,9 @@ Now hits against the player should hopefully feel a bit more impactful, too!
 
 Of course, as things stand, neither enemy nor player actually suffers from losing health. We'll get to the player later, but let's change this for our Walking Enemies next. Indeed, let's get them both dying and spawning next...
 
+[This lesson's reference code][refCode]
+
 [On to Lesson 13][next]
 
 [next]: tut_lesson13.html
+[refCode]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode/Lesson12
