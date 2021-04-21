@@ -158,4 +158,5 @@ The "dist" directory, however, holds the packaged version of the built game--rea
 On to Lesson--wait, no, that's it! We have completed the tutorial, and if all has gone well, you should have your first complete Panda3D game! Congratulations and well done on doing so, and I hope that you enjoy the rest of your time with Panda3D, should you choose to continue with it.
 
 [This lesson's reference code][refCode]
+
 [refCode]: https://github.com/ArsThaumaturgis/Panda3DTutorial.io/tree/master/ReferenceCode/Lesson16
