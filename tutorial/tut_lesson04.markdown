@@ -10,9 +10,9 @@ Aside from GUI elements, there are two main ways of taking input in Panda3D: key
 
 Aside from the mouse, which we'll get to later, we'll be using key-events in this tutorial. I'm not convinced that one way is strictly better than the other, so the choice is somewhat arbitrary.
 
-Now, when the effect of a key is intended to be immediate--such as might be the case for, say, taking an item--then the matter is simple: we just have the key-event perform the relevant logic. (Even if that amounts to calling a method of another object that does the actual work.)
+Now, when the effect of a key is intended to be immediate--such as might be the case for using an item--then the matter is simple: we just have the key-event perform the relevant logic. (Even if that amounts to calling a method of another object that does the actual work.)
 
-However, when the effect of a key is continuous--when we want something to keep happening as long as the key is held down, such as in walking--then things may become a little more complicated. Not much, but a little bit.
+However, when the effect of a key is continuous--when we want something to keep happening as long as the key is held, such as in walking--then things may become a little more complicated. Not much, but a little bit.
 
 The process is pretty straightforward. To start with, we want somewhere to store our key-information so that we can examine it later. We'll use a simple dictionary, mapping key-names to key-states. "True" means that the key is pressed; "False" means that it's not.
 
