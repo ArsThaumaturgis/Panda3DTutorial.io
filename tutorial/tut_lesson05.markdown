@@ -64,9 +64,9 @@ def update(self, task):
 
 (I've also removed the print-statement from "updateKeyMap", by the way, since we now have a more-visual means of seeing at least some of our key-pressed taking effect.)
 
-Now, I mentioned in the previous lesson, I believe, the case of key-presses that aren't held down, that instead have an immediate effect. It might be tempting, given the key-handling code that we've developed here, to attempt to use said code to handle even such immediate-effect keys.
+Now, I mentioned in the previous lesson, I believe, the case of key-presses that aren't held, that instead have an immediate effect. It might be tempting, given the key-handling code that we've developed here, to attempt to use said code to handle even such immediate-effect keys.
 
-I strongly recommend that one not do so: it can be unreliable, as quick key-presses may be missed by the update cycle, and the code to prevent the effect from repeating as the key is held can overcomplicate things.
+I strongly recommend that one _not_ do so: it can be unreliable, as quick key-presses may be missed by the update cycle, and code to prevent the effect from repeating while the key is held can overcomplicate things.
 
 Instead, I recommend simply having the events of immediate-effect keys call one or more separate methods, which then handle or call the relevant logic.
 
