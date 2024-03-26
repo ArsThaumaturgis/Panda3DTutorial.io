@@ -82,13 +82,17 @@ Furthermore, remember that Panda3D distinguishes which node in a collision is th
 
 Collisions are thus only registered between two objects when the "from" object's "from" mask shares at least one "on" bit with the "into" object's "into" mask.
 
-By default, colliders have all of their bits "on"--hence our problem, as our ray collides with everything.
+By default, colliders have all of their first 20 bits set to "on" (i.e. bits 0 through 19, inclusive)--hence our problem, as our ray collides with everything.
 
 Once we've created a BitMask, the simplest way to set which bits are "on" is to call "setBit", providing the index of the bit to be set. If you're comfortable with converting boolean values to base-ten, you can also just initialise the BitMask with a single number.
 
 By default, a newly-created BitMask object has all its bits set to "off".
 
-In our case, we want to make sure that the player has a mask, and that the player's ray has different mask, so that they don't collide. Conversely, we want our enemy to have a mask that matches the ray's, so that they _do_ collide:
+In our case, we want to make sure that the player has a mask, and that the player's ray has a different mask, so that they don't collide. Conversely, we want our enemy to have a mask that matches the ray's, so that they _do_ collide.
+
+Specifically, let's associate the player with bit 1, and the enemy with bit 2. The ray, therefore, should use bit 2--but _not_ bit 1.
+
+(In a larger project, we might use constants or an enumeration to provide more-intuitive names for our bits. But for the purposes of this tutorial, let's keep things simple!)
 
 {% highlight python %}
 # In your "import" statements:
